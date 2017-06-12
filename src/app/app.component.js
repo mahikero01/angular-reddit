@@ -11,6 +11,10 @@ var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app';
     }
+    AppComponent.prototype.addArticle = function (title, link) {
+        console.log("Adding article title: " + title.value + " and link: " + link.value);
+        return false;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
