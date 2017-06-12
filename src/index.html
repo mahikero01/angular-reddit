@@ -13,20 +13,35 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <!-- jQuery -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
+    <!--<link href="src/vendor/semantic.min.css" rel="stylesheet">-->
+	  <link href="styles.css" rel="stylesheet">
+	
     <script src="systemjs.config.js"></script>
     <script>
       System.import('main.js').catch(function(err){ console.error(err); });
     </script>
   </head>
 
-  <body>
-    <app-root>Loading AppComponent content here ...</app-root>
-  </body>
+ <body>
+  <!-- Menu Bar -->
+  <div class="ui menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        <img class="logo" src="/assets/images/ng-book-2-minibook.png">
+        ng-book 2
+      </a>
+      <div class="header item borderless">
+        <h1 class="ui header">
+          Angular 2 Simple Reddit
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui main text container">
+    <app-root>Loading </app-root> <!-- <--- Our app loads here! -->
+  </div>
+
+</body>
 </html>
