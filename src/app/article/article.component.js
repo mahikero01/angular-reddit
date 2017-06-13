@@ -10,19 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var article_model_1 = require("./article.model");
 var ArticleComponent = (function () {
     function ArticleComponent() {
         this.cssClass = 'row';
-        this.title = 'Angular 2';
-        this.link = 'http://angular.io';
-        this.votes = 10;
     }
     ArticleComponent.prototype.voteUp = function () {
-        this.votes += 1;
+        this.article.voteUp();
         return false;
     };
     ArticleComponent.prototype.voteDown = function () {
-        this.votes -= 1;
+        this.article.voteDown();
         return false;
     };
     ArticleComponent.prototype.ngOnInit = function () {
@@ -33,6 +31,10 @@ __decorate([
     core_1.HostBinding('attr.class'),
     __metadata("design:type", Object)
 ], ArticleComponent.prototype, "cssClass", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", article_model_1.Article)
+], ArticleComponent.prototype, "article", void 0);
 ArticleComponent = __decorate([
     core_1.Component({
         selector: 'app-article',
