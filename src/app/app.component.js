@@ -19,6 +19,16 @@ var AppComponent = (function () {
             new article_model_1.Article('Angular Homepage', 'http://angular.io', 1)
         ];
     }
+    AppComponent.prototype.addArticle = function (title, link) {
+        console.log("Adding article title: " + title.value + " and link: " + link.value);
+        this.articles.push(new article_model_1.Article(title.value, link.value, 0));
+        title.value = '';
+        link.value = '';
+        return false;
+    };
+    AppComponent.prototype.sortedArticles = function () {
+        return this.articles.sort(function (a, b) { return b.votes - a.votes; });
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
